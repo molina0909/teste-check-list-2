@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist - Sala Paris</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Checklist - Sala Paris</h1>
+        <p>Verifique os itens e preencha os campos necessários.</p>
+    </header>
+
+    <section class="checklist">
+        <form id="checklist-form" action="#" method="post" enctype="multipart/form-data">
+            <input type="file" accept="image/*" capture="camera" id="cameraInput">
+            
+            <!-- Itens do Checklist -->
+            <div class="itens-checklist">
+                <!-- Função para gerar os campos de cada equipamento -->
+                <script>
+                    const equipamentos = [
+                        { id: "televisor", nome: "Televisor Samsung integra, emite imagens e sons?" },
+                        { id: "telefone", nome: "Telefone Cisco recebe e faz ligações?" },
+                        { id: "perifericos", nome: "Periféricos estão em funcionamento?" },
+                        { id: "cable-cubby", nome: "Cable Cubby está em estado de conservação?" },
+                        { id: "painel-agendamento", nome: "Painel de agendamento AMX está em funcionamento?" }
+                    ];
+
+                    function gerarChecklist() {
+                        const container = document.querySelector(".itens-checklist");
+                        equipamentos.forEach(equip => {
+                            container.innerHTML += `
+                                <div class="item">
+                                    <label class="equipamento">${equip.nome}</label>
+                                    <div class="radio-group">
+                                        <input type="radio" id="${equip.id}-sim" name="equipamento-${equip.id}" value="sim"> Sim
+                                        <input type="radio" id="${equip.id}-nao" name="equipamento-${equip.id}" value="nao" onchange="toggleMotivo('${equip.id}')"> Não
+                                    </div>
+                                    <label for="foto-${equip.id}">Foto aplicável?</label>
+                                    <input type="checkbox" id="foto-${equip.id}" name="foto-${equip.id}">
+                                    <div class="campo-foto">
+                                        <label for="foto-${equip.id}-upload">Anexar Foto:</label>
+                                        <input type="file" id="foto-${equip.id}-upload" name="foto-${equip.id}-upload" accept="image/*">
+                                    </div>
+                                    <div class="campo-motivo" id="motivo-${equip.id}" style="display: none;">
+                                        <label for="motivo-${equip.id}-input">Motivo para não (se aplicável):</label>
+                                        <input type="text" id="motivo-${equip.id}-input" name="motivo-${equip.id}" placeholder="Explique o motivo">
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    document.addEventListener("DOMContentLoaded", gerarChecklist);
+                </script>
+            </div>
+
+            <button type="submit">Enviar Checklist</button>
+        </form>
+    </section>
+ <!-- Botão de Voltar -->
+ <section class="voltar">
+    <button type="button" onclick="window.location.href='index.html';">Voltar</button>
+</section>
+    <script>
+        document.getElementById("checklist-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            alert("Enviado com sucesso!");
+        });
+
+        function toggleMotivo(id) {
+            var motivoDiv = document.getElementById('motivo-' + id);
+            var radioNao = document.getElementById(id + '-nao');
+            motivoDiv.style.display = radioNao.checked ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

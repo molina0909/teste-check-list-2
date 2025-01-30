@@ -1,0 +1,184 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.checklist {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.equipamento {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0056b3; /* Destaque para os nomes dos equipamentos */
+    margin-bottom: 5px;
+}
+
+.radio-group {
+    margin-bottom: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+select, input[type="file"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+.campo-foto,
+.campo-motivo {
+    margin-top: 15px;
+}
+
+.campo-motivo {
+    display: none; /* Inicialmente escondido */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .checklist {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    input[type="file"], input[type="text"] {
+        padding: 8px;
+    }
+}
+
+/* Responsividade para telas menores (mobile) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .checklist {
+        padding: 10px;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .campo-foto,
+    .campo-motivo {
+        margin-top: 10px;
+    }
+
+    input[type="file"], input[type="text"] {
+        padding: 10px;
+    }
+}
+
+/* Responsividade para telas extra pequenas (ex. celulares em modo retrato) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .checklist {
+        padding: 8px;
+    }
+
+    label {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .radio-group input {
+        margin-right: 5px;
+    }
+
+    .campo-foto input[type="file"],
+    .campo-motivo input[type="text"] {
+        padding: 8px;
+    }
+}

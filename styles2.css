@@ -1,0 +1,117 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;  /* Fundo cinza claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  /* Para garantir que o conteúdo inicie do topo */
+    height: 100vh;
+    text-align: center;
+    color: #333;  /* Texto escuro para boa leitura */
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    padding: 20px;
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    padding-top: 40px;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;  /* Ajuste o tamanho do logo conforme necessário */
+    height: auto;
+}
+
+/* Título */
+header h1 {
+    margin-top: 10px;
+    font-size: 2.2rem;
+}
+
+/* Seção de Salas */
+.salas {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;  /* Adiciona espaço entre o cabeçalho e as salas */
+}
+
+.sala {
+    background-color: #fff;
+    color: #2c3e50;
+    border-radius: 12px;
+    padding: 40px;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.sala:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sala a {
+    text-decoration: none;
+    color: #e74c3c;  /* Vermelho para os links */
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.sala a:hover {
+    color: #3498db;  /* Azul claro ao passar o mouse */
+    letter-spacing: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;  /* Reduz o espaço ao redor */
+    }
+
+    .salas {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sala {
+        width: 90%;  /* Faz as salas ficarem mais largas na tela */
+        height: 180px;  /* Ajuste o tamanho */
+        padding: 20px;  /* Reduz o preenchimento */
+    }
+
+    header {
+        font-size: 1.8rem;  /* Reduz o tamanho da fonte */
+        padding: 10px;  /* Ajusta o padding */
+    }
+
+    .logo {
+        width: 50px;  /* Diminui o tamanho da logo */
+        top: 10px;  /* Ajuste a posição da logo */
+    }
+
+    header h1 {
+        font-size: 1.8rem;  /* Ajusta o tamanho do título */
+    }
+}
